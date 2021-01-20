@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "NhapFile";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+<h2 style="margin-bottom: 40px; margin-top:-35px">Nhập File Excel</h2>
+
+
+@using (Html.BeginForm("NhapFile", "Menu", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Raw(ViewBag.Error)
+    <span>Excel File</span><input type="file" name="ExcelFile"/>
+    <br />
+    <input type="submit" value="Import File" class="btn btn-light" /><br />
+    
+}
+

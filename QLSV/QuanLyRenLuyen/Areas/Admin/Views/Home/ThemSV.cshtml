@@ -1,0 +1,161 @@
+﻿
+
+@model Model.EF.SinhVien
+@{
+    ViewBag.Title = "ThemSV";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+<h3 style="margin-bottom: 20px; margin-top:-35px">Thêm sinh viên</h3>
+
+<span style="color: red; font-size:20px;">@ViewBag.Loi</span>
+
+<div class="card">
+    <div class="card-body">
+        
+
+
+        @using (Html.BeginForm("ThemSV", "Home", FormMethod.Post))
+        {
+            
+            <form class="form-sample">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Mã SV</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.MaSV, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">    
+                            <label class="col-sm-3 col-form-label">Họ tên</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.HoTen, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Giới tính</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.GioiTinh, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Ngày sinh</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.NgaySinh, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Số ĐT</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.SoDT, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nơi sinh</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.NoiSinh, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Chỗ tạm trú</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.ChoTamTru, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Chức vụ</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.ChucVu, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Lớp</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.Id_Lop, null, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-9">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Ngành</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.Id_Nganh, null, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label"> </label>
+                            <div class="col-sm-9">
+                                <input type="submit" class="btn btn-light" style="width:150px" value="Save" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label"> </label>
+                            <div class="col-sm-9">
+
+                                <div class="btn btn-light" style="width:150px">@Html.ActionLink("Cencel", "Index", "Home")</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </form>
+        }
+    </div>
+</div>
+
+

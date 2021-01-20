@@ -1,0 +1,67 @@
+﻿@model Model.EF.Lop
+@{
+    ViewBag.Title = "ThemLop";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+
+
+
+        @using (Html.BeginForm("ThemLop", "Menu", FormMethod.Post))
+        {
+
+            <form class="form-sample">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Mã lớp</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.Id_Lop, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Tên lớp</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.TenLop, new { @class = "form-control", @autofocus = "autofocus" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label"> </label>
+                            <div class="col-sm-9">
+                                <input type="submit" class="btn btn-light" style="width:150px" value="Save" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label"> </label>
+                            <div class="col-sm-9">
+
+                                <div class="btn btn-light" style="width:150px">@Html.ActionLink("Cencel", "Index", "Home")</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </form>
+        }
+    </div>
+</div>
+
+
+
+

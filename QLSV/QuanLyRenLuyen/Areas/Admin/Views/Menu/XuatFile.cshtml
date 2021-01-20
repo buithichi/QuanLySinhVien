@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "XuatFile";
+    Layout = "/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+<h2 style="margin-bottom: 40px; margin-top:-35px">Xuất File Excel</h2>
+
+
+@using (Html.BeginForm("XuatFile", "Menu", FormMethod.Post))
+{
+
+<input type="submit" value="Xuất File" class="btn btn-light" /><br />
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+}
+
+

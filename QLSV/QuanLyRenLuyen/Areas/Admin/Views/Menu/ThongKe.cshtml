@@ -1,0 +1,31 @@
+﻿@model Model.EF.User
+@{
+    ViewBag.Title = "ThongKe";
+    Layout = "/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+<h3 style="margin-bottom: 20px; margin-top:-35px">THỐNG KÊ</h3>
+
+
+@using (Html.BeginForm("ThongKe", "Menu", FormMethod.Post))
+{
+   
+  
+    <div class="row" style="margin-top:40px">
+
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+                    <canvas id="doughnutChart" style="height:250px"></canvas>
+                    <h4 style="margin-top:20px; text-align:center" class="card-title">Biểu đồ thể hiện cơ cấu giới tính sinh viên</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+
+

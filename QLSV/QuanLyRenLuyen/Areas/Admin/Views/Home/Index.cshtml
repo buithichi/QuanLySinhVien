@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "/Areas/Admin/Views/Shared/_Layouts.cshtml";
+    var listSinhVien = (List<Model.EF.SinhVien>)ViewBag.ListSinhVien;
+
+}
+<h3 style="margin-bottom: 40px; margin-top:-35px">QUẢN LÝ THÔNG TIN SINH VIÊN</h3>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+
+   
+
+    <div class="input-group" style="margin-top:10px">
+        <div class="input-group-prepend bg-transparent">
+            <input type="submit" style="margin-top: 7px; height: 45px;"  class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn input-group-text border-0 mdi mdi-magnify" href="#" value="Search" />
+            
+        </div>
+        <input name="search_text" style="width:100px" type="text" class="form-control bg-transparent border-0 Search-Text" placeholder="Search-Text">
+    </div>
+    <br/>
+    <span style="color: red; font-size:20px;">@ViewBag.SoLuong</span>
+
+    <div class="row" style="margin-top:50px">
+    @foreach (var item in listSinhVien)
+    {
+
+        <div class="col-sm-6 col-md-4">
+            <div class="product__item" style="margin-left: 45px;" >
+
+                <div class="product__item__pic set-bg" data-setbg="@item.Anh" style="border: 1px solid #c2e1fd ;
+                    box-shadow: 0px 3px 15px 3px #889eaf;width:200px; height: 300px; border-radius:5%; ">
+
+                    <ul class="product__hover">
+                        <li><a href="#" ><span class="arrow_expand"></span></a></li>
+                        <li><a href="@Url.Action("NguoiDung", "Menu", @item)"><span class="mdi mdi-account-card-details"></span></a></li>
+                        <li><a href="@Url.Action("Index", "Home", @item)"><span class="mdi mdi-delete"></span></a></li>
+                    </ul>
+                    
+                </div>
+                <div class="product__item__text">
+                    <h6 class="hoten" style="width:200px;">@item.HoTen</h6>
+                    <h6 style="width:200px;">@item.MaSV</h6>
+                </div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+    }
+
+        
+        
+</div>
+}
+
+
